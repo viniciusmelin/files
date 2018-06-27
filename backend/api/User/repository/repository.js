@@ -153,7 +153,7 @@ const repository = () => {
                 if (err) {
                     res.send({ result: 'error', error: { msg: 'User not found!' } })
                 }
-                next(user)
+                next()
             })
         })
     }

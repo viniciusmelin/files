@@ -15,8 +15,6 @@ module.exports = (app) => {
     apiRoutes.post('/file/create', (req, res, next) => {
         fileRepository.repository().fileCreate(req.body).then(result => {
             res.send(result)
-            console.log(next)
-
         }).catch(err => {
             res.send(err)
 
@@ -24,7 +22,7 @@ module.exports = (app) => {
     })
 
     app.post('/file/update',(req,res,next)=>{
-
+        
     })
     apiRoutes.post('/file/count', (req, res, next) => {
         fileRepository.repository().fileCount().then(result => {
@@ -60,7 +58,6 @@ module.exports = (app) => {
     app.post('/login', (req, res, next) => {
         userRepository.repository().login(req.body).then(result => {
             res.send(result)
-            console.log('req.session')
         }).catch(err => {
             res.send(err)
         })
