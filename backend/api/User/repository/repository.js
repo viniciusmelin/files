@@ -108,7 +108,7 @@ const repository = () => {
             })
         })
     })
-    const login = (body) => new Promise((resolve, reject) => {
+    const login = (body,req) => new Promise((resolve, reject) => {
 
         User.findOne({ email: body.email }, (err, user) => {
             if (err) {
@@ -129,7 +129,8 @@ const repository = () => {
             var token = jwt.sign({ id: user._id }, Auth.secret, {
                 expiresIn: 86400
             })
-
+            req.session.user_id = user._id
+            req.session.user_token = token
             return resolve({ result: 'success', msg: 'User authentication!', token: token })
         })
 

@@ -16,7 +16,7 @@ module.exports = (db) =>{
         secret:'my-secret',
         resave:false,
         saveUninitialized: true,
-        store: new MongoStore({dbPromise:db})
+        store: new MongoStore({dbPromise:db}),
     }))
     app.use(bodyParse.urlencoded({extended:true}))
     app.use(bodyParse.json())

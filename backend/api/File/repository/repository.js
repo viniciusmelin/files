@@ -14,10 +14,12 @@ const repository = ()=>{
         })
     }
 
-    const fileCreate = (body)=> new Promise((resolve,reject)=>{
+    const fileCreate = (body,req)=> new Promise((resolve,reject)=>{
         let f = new File({
             text:body.text,
-            
+            columns: body.columns,
+            calleds:body.calleds,
+            user: req.session.user_id
         })
         f.save((err)=>{
             if(err)
@@ -26,6 +28,15 @@ const repository = ()=>{
             }
 
             resolve({result:'success',msg:'File create success!',file:f})
+        })
+    })
+
+    const fileInsertCalled = (body,req)=> new Promise((resolve,reject)=>{
+        File.update({_id:body},{$push:{calleds:body.called}},(err,raw)=>{
+            if(err)
+            {
+                return reject({result:'error',error:{msg:err}})
+            }
         })
     })
     

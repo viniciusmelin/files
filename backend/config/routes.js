@@ -13,7 +13,7 @@ module.exports = (app) => {
     })
 
     apiRoutes.post('/file/create', (req, res, next) => {
-        fileRepository.repository().fileCreate(req.body).then(result => {
+        fileRepository.repository().fileCreate(req.body,req).then(result => {
             res.send(result)
         }).catch(err => {
             res.send(err)
@@ -56,7 +56,7 @@ module.exports = (app) => {
     })
     
     app.post('/login', (req, res, next) => {
-        userRepository.repository().login(req.body).then(result => {
+        userRepository.repository().login(req.body,req).then(result => {
             res.send(result)
         }).catch(err => {
             res.send(err)
