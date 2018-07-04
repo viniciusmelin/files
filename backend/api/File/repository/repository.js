@@ -46,7 +46,7 @@ const repository = () => {
                 }
             })
         }
-        
+
         File.update({ _id: file_id }, { $push: { calleds: called } }, (err, raw) => {
             if (err) {
                 return reject({ result: 'error', error: { msg: err } })
@@ -67,6 +67,12 @@ const repository = () => {
         File.findOne({ _id: file_id }, (err, res) => {
             if (err) {
                 return reject({ result: 'error', error: err })
+            }
+            const called = res.calleds.id(called_id)
+
+            if(!called)
+            {
+                return reject({ result: 'error', error:{msg:"Called not found!"} })
             }
             res.calleds.id(called_id).remove()
             res.save()
