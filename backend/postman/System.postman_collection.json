@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "de524af1-992c-4ae6-bb3f-df65a0cc896d",
+		"name": "System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:8000/api/user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\":\"Zé\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/user/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"testetttt\",\n\t\"email\":\"ok.melin@hotmail.com\",\n\t\"password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/api/user/update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Vinicius Melin\",\n\t\"emailold\":\"testerrr.melin@hotmail.com\",\n\t\"emailnew\":\"viniciusti.melin@hotmail.com\",\n\t\"passwordold\":\"123456\",\n\t\"passwordnew\":\"123456789\",\n\t\"active\":\"false\",\n\t\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzI0ZDdkY2IwYTU2MTZjMDQ5NzY5NyIsImlhdCI6MTUzMDAyMzI5MywiZXhwIjoxNTMwMTA5NjkzfQ.3nIWS5xUk0YZqSDxRMAdhri-lO0fBHBjLZdacHHGEmQ\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/user/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\t\"password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:8000/file/called/remove",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\t\"file\":{\n\t\t\"id\":\"5b3d0fa2a059e808689374ff\"\n\t},\n\t\"called\":{\n\t\t\"id\":\"5b3d0fa2a059e80868937501\"\n\t},\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzI4Yzc3Yzc5OTUxMWZlMGE2ZmFiMiIsImlhdCI6MTUzMDcwMzE0NSwiZXhwIjoxNTMwNzg5NTQ1fQ.szwdNqSOREEwkq0ecVs6BKD0uqlTq2j1DVY5a9mFTwc\"\n\t\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/file/called/remove",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"file",
+								"called",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/api/file/called/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"file\":{\n\t\t\"id\":\"5b3d0fa2a059e808689374ff\"\n\t},\n\t\"calleds\": \n\t[\n\t\t{\"called\":10},\n\t\t{\"called\":12}\n\t],\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzI4Yzc3Yzc5OTUxMWZlMGE2ZmFiMiIsImlhdCI6MTUzMDcyNzk5MywiZXhwIjoxNTMwODE0MzkzfQ.L5-ffELq5EUVtqdxcoUzOKCSnxE46wKiBIB3VPiwk5o\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/file/called/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"file",
+								"called",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/file/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\":\"ffffffffffffff\",\n\t\"columns\":\"tttttttttt\",\n\t\"calleds\": \n\t[\n\t\t{\"called\":10},\n\t\t{\"called\":3000}\n\t],\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzI4Yzc3Yzc5OTUxMWZlMGE2ZmFiMiIsImlhdCI6MTUzMDcyNzk5MywiZXhwIjoxNTMwODE0MzkzfQ.L5-ffELq5EUVtqdxcoUzOKCSnxE46wKiBIB3VPiwk5o\"\n\t\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/file/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"file",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/api/file/count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/file/count",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"file",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
