@@ -54,6 +54,14 @@ module.exports = (app) => {
             res.send(err)
         })
     })
+
+    apiRoutes.post('/file/called/remove',(req,res,next)=>{
+        fileRepository.repository().fileRemoveCalled(req.body).then(result=>{
+            res.send(result)
+        }).catch(err=>{
+            res.send(err)
+        })
+    })
     app.post('/register', (req, res, next) => {
         userRepository.repository().userRegister(req.body).then(result => {
             res.send(result)
