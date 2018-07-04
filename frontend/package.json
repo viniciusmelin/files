@@ -9,6 +9,7 @@
   "author": "Vinicius Melin",
   "license": "ISC",
   "dependencies": {
-    "@angular/cli": "^6.0.8"
+    "@angular/cli": "^6.0.8",
+    "admin-lte": "^3.0.0-alpha.2"
   }
 }
