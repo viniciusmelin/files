@@ -19,7 +19,7 @@
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
-    "mongoose": "^5.1.5",
+    "mongoose": "5.2.8",
     "node-restful": "^0.2.6",
     "restful-mongoose": "^1.0.1"
   }
