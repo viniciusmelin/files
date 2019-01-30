@@ -108,7 +108,7 @@ const repository = () => {
             })
         })
     })
-    const login = (body,req) => new Promise((resolve, reject) => {
+    const login = (body, req) => new Promise((resolve, reject) => {
 
         User.findOne({ email: body.email }, (err, user) => {
             if (err) {
@@ -131,7 +131,7 @@ const repository = () => {
             })
             req.session.user_id = user._id
             req.session.user_token = token
-            return resolve({ result: 'success', msg: 'User authentication!', token: token })
+            return resolve({ result: 'success', msg: 'User authentication!', user: { _id: user._id,name:user.name, email: user.email, token: token, active: user.active } })
         })
 
     })
