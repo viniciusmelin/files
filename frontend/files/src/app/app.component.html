@@ -1,0 +1,15 @@
+<div *ngIf="mostrarMenu">
+  <app-header [user]="this.user"></app-header>
+  <app-sidebar></app-sidebar>
+  <div class="content-wrapper">
+    <app-breadcumb></app-breadcumb>
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<div *ngIf="!mostrarMenu">
+  <app-login></app-login>
+</div>
