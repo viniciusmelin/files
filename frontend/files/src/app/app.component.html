@@ -1,11 +1,17 @@
 <div id="main-wrapper">
-  <app-header></app-header>
-  <app-sidebar></app-sidebar>
-  <div class="page-wrapper" style="min-height: 878px;">
-    <div class="container-fluid">
-      <app-breadcumb></app-breadcumb>
-      <router-outlet></router-outlet>
+  <div *ngIf="mostrarMenu">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="page-wrapper" style="min-height: 878px;">
+      <div class="container-fluid">
+        <app-breadcumb></app-breadcumb>
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
     </div>
-    <app-footer></app-footer>
   </div>
+  <div *ngIf="!mostrarMenu">
+    <app-login></app-login>
+  </div>
+
 </div>
